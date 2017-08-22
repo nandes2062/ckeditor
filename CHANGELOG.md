@@ -5,6 +5,7 @@ CKEditor AddOn - Changelog
 
 * Update auf CKEditor 4.7.2 Full
 * Methode `rex_ckeditor::profileExists()` hinzugefügt, prüft ob ein Profil vorhanden ist, thx@rkemmere
+* Der CKEditor lässt sich nun auch über die CSS Klasse `rex-ckeditor` ansprechen. Ein Geschwindigkeitsvorteil bei der Editor-Initialisierung ist dadurch möglich (aber noch nicht wirklich bewiesen)..., thx@joachimdoerr
 
 ### Version 4.6.2 - 15. März 2017
 

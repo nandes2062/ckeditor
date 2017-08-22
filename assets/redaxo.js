@@ -40,7 +40,7 @@ function rex_ckeditor_init(textareaId) {
 function rex_ckeditor_init_all() {
 	var i = 0;
 
-	$('.ckeditor').each(function() {
+	$('.ckeditor,.rex-ckeditor').each(function() {
 		i++;
 
 		// if id of textarea is missing set one, otherwise ckeditor replace will not work

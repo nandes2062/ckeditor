@@ -26,7 +26,7 @@ class rex_ckeditor {
 		// margin for images
 		$buffer = 'img { margin: 0 0 10px 0; } img[style*=\'left\'] { margin-right: 15px; } img[style*=\'right\'] { margin-left: 15px; }' . $buffer;
 
-		// table 100% width for images
+		// table 100% width
 		$buffer = 'table { width: 100%; }' . $buffer;
 
 		$ckjs = str_replace('a.push("html{cursor:text;*cursor:auto}");', 'a.push("html{cursor:text;*cursor:auto}' . $buffer . '");', $ckjs);
