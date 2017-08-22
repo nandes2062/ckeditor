@@ -141,6 +141,15 @@ echo '</div>';
 .ckeditor-output img[style*="right"] { }
 ```
 
+Prüfen ob ein CKEditor Profil existiert
+---------------------------------------
+
+```php
+if (rex_ckeditor::profileExists('lite')) {
+	// profil "lite" existiert
+}
+```
+
 CKEditor Toolbar Buttons
 ------------------------
 

@@ -1,6 +1,10 @@
 CKEditor AddOn - Changelog
 ==========================
 
+### Version 4.7.2-dev
+
+* Methode `rex_ckeditor::profileExists()` hinzugefügt, prüft ob ein Profil vorhanden ist, thx@rkemmere
+
 ### Version 4.6.2 - 15. März 2017
 
 * Portierung zu REDAXO 5
