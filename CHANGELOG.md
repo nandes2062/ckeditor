@@ -4,6 +4,7 @@ CKEditor AddOn - Changelog
 ### Version 4.7.2-dev
 
 * Update auf CKEditor 4.7.2 Full
+* Syntax Check vor Speicherung des JavaScript Config Objekts beim Profil hinzufügen/bearbeiten
 * Methode `rex_ckeditor::profileExists()` hinzugefügt, prüft ob ein Profil vorhanden ist, thx@rkemmere
 * Der CKEditor lässt sich nun auch über die CSS Klasse `rex-ckeditor` ansprechen. Ein Geschwindigkeitsvorteil bei der Editor-Initialisierung ist dadurch möglich (aber noch nicht wirklich bewiesen)..., thx@joachimdoerr
 * Readme: "CKEditor in MBlock einsetzen" Abschnitt hinzugefügt

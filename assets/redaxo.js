@@ -94,6 +94,38 @@ $(document).on('rex:ready', function (event, container) {
 	// initialize ckeditor
 	rex_ckeditor_init_all();
 
+	// js config code check
+	$('#rex-page-ckeditor-profiles form').submit(function(f) {
+		var code = '';
+
+		if ($('.CodeMirror').length) {
+			var editor = $('.CodeMirror')[0].CodeMirror;
+			code = editor.getValue();
+		} else {
+			code = $('#ckeditor-jscode').val();
+		}
+
+		if (code.charAt(0) !== '{' ) {
+			if (!confirm($('#rex-ckeditor-lang-strings').attr('data-lang-ckeditor-js-config-object-syntax-check-4') + '\n\n' + $('#rex-ckeditor-lang-strings').attr('data-lang-ckeditor-js-config-object-syntax-check-3'))) {
+				f.preventDefault();
+			}
+		}
+
+		if (code !== '') {
+			try {
+				eval('var config = ' + code);
+			} catch (e) {
+				if (e instanceof SyntaxError) {
+					if (!confirm($('#rex-ckeditor-lang-strings').attr('data-lang-ckeditor-js-config-object-syntax-check-1') + '\n\n' + $('#rex-ckeditor-lang-strings').attr('data-lang-ckeditor-js-config-object-syntax-check-2a') + '\n' + e.message + ' ' + $('#rex-ckeditor-lang-strings').attr('data-lang-ckeditor-js-config-object-syntax-check-2b') + ' ' + e.lineNumber + '\n\n' + $('#rex-ckeditor-lang-strings').attr('data-lang-ckeditor-js-config-object-syntax-check-3'))) {
+						f.preventDefault();
+					}
+				} else {
+					throw (e);
+				}
+			}
+		}
+	});
+
 	// smart strip
 	$('form').submit(function() {
 		if ($('.ckeditor-smartstrip').length) {

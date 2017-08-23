@@ -9,6 +9,10 @@
 	display: inline-block;
 }
 
+#rex-ckeditor-lang-strings {
+	display: none;
+}
+
 .rex-slice-output img[style*="left"] {
 	margin: 0 15px 10px 0;
 }

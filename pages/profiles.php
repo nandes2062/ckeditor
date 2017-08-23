@@ -50,13 +50,11 @@ if ($func == '') {
 	$field = $form->addTextField('name');
 	$field->setLabel($this->i18n('profiles_label_name'));
 
-
 	$field = $form->addTextField('description');
 	$field->setLabel($this->i18n('profiles_label_description'));
 
-
 	$field = $form->addTextAreaField('jscode');
-	$field->setAttribute('class', 'codemirror');
+	$field->setAttribute('class', 'codemirror form-control');
 	$field->setAttribute('id', 'ckeditor-jscode');
 	$field->setAttribute('data-codemirror-mode', 'text/javascript');
 	$field->setLabel($this->i18n('profiles_label_jscode'));
@@ -66,6 +64,14 @@ if ($func == '') {
 	$field->getSelect()->addOption($this->i18n('profiles_smartstrip_active'), '1');
 	$field->getSelect()->addOption($this->i18n('profiles_smartstrip_not_active'), '0');
 	$field->setLabel($this->i18n('profiles_label_smartstrip'));
+
+	$field = $form->addReadOnlyField('rex-ckeditor-lang-strings');
+	$field->setAttribute('id', 'rex-ckeditor-lang-strings');
+	$field->setAttribute('data-lang-ckeditor-js-config-object-syntax-check-1', $this->i18n('ckeditor_js_config_object_syntax_check_1'));
+	$field->setAttribute('data-lang-ckeditor-js-config-object-syntax-check-2a', $this->i18n('ckeditor_js_config_object_syntax_check_2a'));
+	$field->setAttribute('data-lang-ckeditor-js-config-object-syntax-check-2b', $this->i18n('ckeditor_js_config_object_syntax_check_2b'));
+	$field->setAttribute('data-lang-ckeditor-js-config-object-syntax-check-3', $this->i18n('ckeditor_js_config_object_syntax_check_3'));
+	$field->setAttribute('data-lang-ckeditor-js-config-object-syntax-check-4', $this->i18n('ckeditor_js_config_object_syntax_check_4'));
 	
 	if ($func == 'edit') {
 		$form->addParam('id', $id);

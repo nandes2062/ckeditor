@@ -63,7 +63,7 @@ CKEditor in MBlock einsetzen
 Leider gibt es aktuell keine MBlock Kompatibilität. Als Workaround empfehlen sich zwei Möglichkeiten:
 
 1. Man benutzt für MBlock einen zusätzlichen Editor wie den TinyMCE.
-2. Man benutzt anstatt MBlock eine modulbasierte MultiSlice/Block Variante wie z.b. in den X-Core Code Snippets zu finden.
+2. Man benutzt anstatt MBlock eine modulbasierte MultiSlice/Block Variante wie z.b. in den Code Snippets des X-Core Addons zu finden ist.
 
 Custom Styles hinzufügen
 ------------------------
