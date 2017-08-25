@@ -149,6 +149,7 @@ echo '</div>';
 .ckeditor-output img[style*="right"] { }
 ```
 
+
 Prüfen ob ein CKEditor Profil existiert
 ---------------------------------------
 
@@ -157,6 +158,25 @@ if (rex_ckeditor::profileExists('lite')) {
 	// profil "lite" existiert
 }
 ```
+
+Profil anlegen
+---------------------------------------
+Methode zur Erstellung eines neuen Profils, z.B. bei Installation eines Addons oder Moduls
+
+```php
+rex_ckeditor::insertProfile('profilname', $description, $jscode, '1');
+```
+
+**Beispiel mit vorheriger Prüfung:***
+
+```php
+if (rex_addon::get('ckeditor')->isAvailable()) {
+  if (!rex_ckeditor::profileExists('profilname')) {
+    rex_ckeditor::insertProfile('profilname', $description, $jscode, '1');
+  }
+}
+```
+
 
 CKEditor Toolbar Buttons
 ------------------------
