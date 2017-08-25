@@ -1,7 +1,7 @@
 CKEditor AddOn - Changelog
 ==========================
 
-### Version 4.7.2-dev
+### Version 4.7.2 - 25. August 2017
 
 * Update auf CKEditor 4.7.2 Full
 * Syntax Check vor Speicherung des JavaScript Config Objekts beim Profil hinzufügen/bearbeiten
