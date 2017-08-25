@@ -127,6 +127,7 @@ class rex_ckeditor {
 		} catch (rex_sql_exception $e) {
 			return $e->getMessage();
 		}
+		rex_ckeditor::writeProfileJSFile();
 	}
 
 	public static function profileExists($name) {
