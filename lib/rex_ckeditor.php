@@ -112,6 +112,22 @@ class rex_ckeditor {
 			return $matches[1] . $src;
 		}, $html);
 	}
+	
+	public static function insertProfile ($name, $description = '', $jscode = '', $smartstrip = '1') {
+		$sql = rex_sql::factory();
+		$sql->setTable(rex::getTablePrefix().'ckeditor_profiles');
+		$sql->setValue('name', $name);
+		$sql->setValue('description', $description);
+		$sql->setValue('jscode', $jscode);
+		$sql->setValue('smartstrip', $smartstrip);
+		
+		try {
+			$sql->insert();
+			return $sql->getLastId();
+		} catch (rex_sql_exception $e) {
+			return $e->getMessage();
+		}
+	}
 
 	public static function profileExists($name) {
 		$sql = rex_sql::factory();
