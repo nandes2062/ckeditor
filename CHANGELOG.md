@@ -1,8 +1,9 @@
 CKEditor AddOn - Changelog
 ==========================
 
-### Version 4.7.3-dev
+### Version 4.8.0-dev
 
+* Update auf CKEditor v4.8.0 Full Nightly vom 02.11.2017 wegen Styleset Probleme in v4.7.2, thx@rkemmere
 * `rex_ckeditor::insertProfile()` ergänzt, thx@skerbis
 
 ### Version 4.7.2 - 25. August 2017
