@@ -1,6 +1,62 @@
 CKEditor 4 Changelog
 ====================
 
+## CKEditor 4.8
+
+New Features:
+
+* [#607](https://github.com/ckeditor/ckeditor-dev/issues/607): Manually inserted hex color is prefixed with hash tag if needed. It ensures a valid hex color is used when setting table cell border or background color via [Color Dialog](http://ckeditor.com/addon/colordialog) window.
+* [#584](https://github.com/ckeditor/ckeditor-dev/issues/584): [Font size and Family](http://ckeditor.com/addon/font) and [Format](http://ckeditor.com/addon/format) drop-downs are not toggleable anymore. Default option to reset styles added.
+* [#856](https://github.com/ckeditor/ckeditor-dev/issues/856): Introduced [`CKEDITOR.tools.keystrokeToArray`](https://docs.ckeditor.com/ckeditor-docs/build/#!/api/CKEDITOR.tools-method-keystrokeToArray). It converts given keystroke into its string representation, returning every key name as separate array element.
+* [#1053](https://github.com/ckeditor/ckeditor-dev/issues/1053): Introduced [`CKEDITOR.tools.object.merge`](https://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.tools.object-method-merge). It allows to merge two objects, returning the new object with all properties from both objects deeply cloned.
+* [#1073](https://github.com/ckeditor/ckeditor-dev/issues/1073): Introduced [`CKEDITOR.tools.array.every`](https://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.tools.array-method-every). It invokes given test function on every array element and returns true if all elements pass the test.
+
+Fixed Issues:
+
+* [#796](https://github.com/ckeditor/ckeditor-dev/issues/796): Fixed: List is pasted from OneNote in a reversed order.
+* [#834](https://github.com/ckeditor/ckeditor-dev/issues/834): [IE9-11] Fixed: Editor does not save selected state of radiobuttons inserted by [Form Elements](https://ckeditor.com/addon/forms) plugin.
+* [#704](https://github.com/ckeditor/ckeditor-dev/issues/704): [Edge] Fixed: Using `Ctrl/Cmd + Z` breaks widgets structure.
+* [#591](https://github.com/ckeditor/ckeditor-dev/issues/591): Fixed: Column is inserted in a wrong order inside table if any cell has a vertical split.
+* [#787](https://github.com/ckeditor/ckeditor-dev/issues/787): Fixed: Using cut inside nested table does not cut selected content.
+* [#842](https://github.com/ckeditor/ckeditor-dev/issues/842): Fixed: List style not restored when toggling list indent level in [Indent List](http://ckeditor.com/addon/indentlist) plugin.
+* [#711](https://github.com/ckeditor/ckeditor-dev/issues/711): Fixed: Dragging widgets should only work with left mouse button.
+* [#862](https://github.com/ckeditor/ckeditor-dev/issues/862): Fixed: "Object Styles" group in [Styles Combo](https://ckeditor.com/addon/stylescombo) plugin is visible only if whole element is selected.
+* [#994](https://github.com/ckeditor/ckeditor-dev/pull/994): Fixed: Typo in [`CKEDITOR.focusManager.focus`](https://docs.ckeditor.com/#!/api/CKEDITOR.focusManager-method-focus) API documentation. Thanks to [benjy](https://github.com/benjy)!
+* [#1014](https://github.com/ckeditor/ckeditor-dev/issues/1014): Fixed: [Table Tools](https://ckeditor.com/addon/tabletools) cell properties dialog is now [ACF](http://docs.ckeditor.com/#!/guide/dev_acf) aware - it not possible to change cell width/height if corresponding styles are disabled.
+* [#877](https://github.com/ckeditor/ckeditor-dev/issues/877): Fixed: Lists with custom bullets with exotic characters crashes editor when [pasted from Word](http://ckeditor.com/addon/pastefromword).
+* [#605](https://github.com/ckeditor/ckeditor-dev/issues/605): Fixed: Inline widgets do not preserve trailing spaces.
+* [#1008](https://github.com/ckeditor/ckeditor-dev/issues/1008): Fixed: Shorthand hex colors from [colorButton_colors](https://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.config-cfg-colorButton_colors) are not correctly highlighted in [Color Button](http://ckeditor.com/addon/colorbutton) _text color_ / _background color_ panel.
+* [#1094](https://github.com/ckeditor/ckeditor-dev/issues/1094): Fixed: Widget definition [`upcats`](https://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.plugins.widget.definition-property-upcasts) methods are called for every element.
+* [#1057](https://github.com/ckeditor/ckeditor-dev/issues/1057): Fixed: [Notification](https://ckeditor.com/addon/notification) plugin overwrites Web Notifications API due to leakage to the global scope.
+
+Other Changes:
+
+* [#815](https://github.com/ckeditor/ckeditor-dev/issues/815): Removed Node.js dependency from CKEditor build script.
+
+## CKEditor 4.7.3
+
+New Features:
+
+* [#568](https://github.com/ckeditor/ckeditor-dev/issues/568): Added possibility to adjust nested editables' filters using the [`CKEDITOR.filter.disallowedContent`](https://docs.ckeditor.com/#!/api/CKEDITOR.filter-property-disallowedContent) property.
+
+Fixed Issues:
+
+* [#554](https://github.com/ckeditor/ckeditor-dev/issues/554): Fixed: [`change`](https://docs.ckeditor.com/#!/api/CKEDITOR.editor-event-change) event not fired when typing the first character after pasting into the editor. Thanks to [Daniel Miller](https://github.com/millerdev)!
+* [#566](https://github.com/ckeditor/ckeditor-dev/issues/566): Fixed: The CSS `border` shorthand property with zero width (`border: 0px solid #000;`) causes the table to have the border attribute set to 1.
+* [#779](https://github.com/ckeditor/ckeditor-dev/issues/779): Fixed: The [Remove Format](https://ckeditor.com/addon/removeformat) plugin removes elements with language definition inserted by the [Language](https://ckeditor.com/addon/language) plugin.
+* [#423](https://github.com/ckeditor/ckeditor-dev/issues/423): Fixed: The [Paste from Word](https://ckeditor.com/addon/pastefromword) plugin pastes paragraphs into the editor even if [`CKEDITOR.config.enterMode`](https://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-enterMode) is set to `CKEDITOR.ENTER_BR`.
+* [#719](https://github.com/ckeditor/ckeditor-dev/issues/719): Fixed: Image inserted using the [Enhanced Image](https://ckeditor.com/addon/image2) plugin can be resized when the editor is in [read-only mode](https://docs.ckeditor.com/#!/guide/dev_readonly).
+* [#577](https://github.com/ckeditor/ckeditor-dev/issues/577): Fixed: The "Delete Columns" command provided by the [Table Tools](https://ckeditor.com/addon/tabletools) plugin throws an error when trying to delete columns.
+* [#867](https://github.com/ckeditor/ckeditor-dev/issues/867): Fixed: Typing into a selected table throws an error.
+* [#817](https://github.com/ckeditor/ckeditor-dev/issues/817): Fixed: The [Save](https://ckeditor.com/addon/save) plugin does not work in [Source Mode](https://ckeditor.com/addon/sourcearea).
+
+Other Changes:
+
+* Updated the [WebSpellChecker](http://ckeditor.com/addon/wsc) plugin:
+	* [#40](https://github.com/WebSpellChecker/ckeditor-plugin-wsc/issues/40): Fixed: IE10 throws an error when spell checking is started.
+* [#800](https://github.com/ckeditor/ckeditor-dev/issues/800): Added the [`CKEDITOR.dom.selection.isCollapsed`](https://docs.ckeditor.com/#!/api/CKEDITOR.dom.selection-method-isCollapsed) method which is a simpler way to check if the selection is collapsed.
+* [#830](https://github.com/ckeditor/ckeditor-dev/issues/830): Added an option to define which dialog tab should be shown by default when creating [`CKEDITOR.dialogCommand`](https://docs.ckeditor.com/#!/api/CKEDITOR.dialogCommand).
+
 ## CKEditor 4.7.2
 
 New Features:
@@ -10,7 +66,9 @@ New Features:
 Fixed Issues:
 
 * [#663](https://github.com/ckeditor/ckeditor-dev/issues/663): [Chrome] Fixed: Clicking the scrollbar throws an `Uncaught TypeError: element.is is not a function` error.
-* [#520](https://github.com/ckeditor/ckeditor-dev/issues/520): Fixed: Widgets cannot be properly pasted into a table cell.
+* [#694](https://github.com/ckeditor/ckeditor-dev/pull/694): Refactoring in the [Table Selection](http://ckeditor.com/addon/tableselection) plugin:
+  * [#520](https://github.com/ckeditor/ckeditor-dev/issues/520): Fixed: Widgets cannot be properly pasted into a table cell.
+  * [#460](https://github.com/ckeditor/ckeditor-dev/issues/460): Fixed: Editor gone after pasting into an editor within a table.
 * [#579](https://github.com/ckeditor/ckeditor-dev/issues/579): Fixed: Internal `cke_table-faked-selection-table` class is visible in the Stylesheet Classes field of the [Table Properties](http://ckeditor.com/addon/table) dialog.
 * [#545](https://github.com/ckeditor/ckeditor-dev/issues/545): [Edge] Fixed: Error thrown when pressing the [Select All](https://ckeditor.com/addon/selectall) button in [Source Mode](http://ckeditor.com/addon/sourcearea).
 * [#582](https://github.com/ckeditor/ckeditor-dev/issues/582): Fixed: Double slash in the path to stylesheet needed by the [Table Selection](http://ckeditor.com/addon/tableselection) plugin. Thanks to [Marius Dumitru Florea](https://github.com/mflorea)!
@@ -61,7 +119,7 @@ New Features:
 
 * [#16755](http://dev.ckeditor.com/ticket/16755): Added the [Table Selection](http://ckeditor.com/addon/tableselection) plugin that lets you select and manipulate an arbitrary rectangular table fragment (a few cells, a row or a column).
 * [#16961](http://dev.ckeditor.com/ticket/16961): Added support for pasting from Microsoft Excel.
-* [#13381](http://dev.ckeditor.com/ticket/13381): Dynamic code evaluation call in [`CKEDITOR.template`](http://docs.ckeditor.com/#!/api/CKEDITOR.template) removed. CKEditor can now be used with the `unsafe-eval` Content Security Policy. Thanks to [Caridy Patiño](http://caridy.name)!
+* [#13381](http://dev.ckeditor.com/ticket/13381): Dynamic code evaluation call in [`CKEDITOR.template`](http://docs.ckeditor.com/#!/api/CKEDITOR.template) removed. CKEditor can now be used without the `unsafe-eval` Content Security Policy. Thanks to [Caridy Patiño](http://caridy.name)!
 * [#16971](http://dev.ckeditor.com/ticket/16971): Added support for color in the `background` property containing also other styles for table cells in the [Table Tools](http://ckeditor.com/addon/tabletools) plugin.
 * [#16847](http://dev.ckeditor.com/ticket/16847): Added support for parsing and inlining any formatting created using the Microsoft Word style system to the [Paste from Word](http://ckeditor.com/addon/pastefromword) plugin.
 * [#16818](http://dev.ckeditor.com/ticket/16818): Added table cell height parsing in the [Paste from Word](http://ckeditor.com/addon/pastefromword) plugin.
